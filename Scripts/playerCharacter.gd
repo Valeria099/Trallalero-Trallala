@@ -18,19 +18,16 @@ func _physics_process(delta):
 	
 	if is_swimming:
 		# Swimming movement - full directional control
-		print("SWIMMING")
 		input_vector.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 		input_vector.y = Input.get_action_strength("down") - Input.get_action_strength("up")
 		velocity = input_vector.normalized() * swim_speed
 		
 		# Jump out of water
 		if Input.is_action_just_pressed("jump"):
-			print("JUMPINGG")
 			velocity.y = -jump_force
 			is_jumping = true
 	else:
 		# Air/land movement - horizontal control only with gravity
-		print("FALLINGG")
 		input_vector.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 		velocity.x = input_vector.x * move_speed
 		
