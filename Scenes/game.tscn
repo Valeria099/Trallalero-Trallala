@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bo5o0mroh1kq8"]
+[gd_scene load_steps=2 format=3 uid="uid://vxmr5fn2ux1o"]
 
-[ext_resource type="PackedScene" uid="uid://cs4ar6wdoe1w0" path="res://Scenes/Character/player_diver.tscn" id="1_ebmjs"]
+[ext_resource type="PackedScene" uid="uid://cs4ar6wdoe1w0" path="res://Scenes/Character/player_diver.tscn" id="1_iukft"]
 
-[node name="GameRoot" type="Node2D"]
+[node name="Game" type="Node2D"]
 
-[node name="PlayerDiver" parent="." instance=ExtResource("1_ebmjs")]
-position = Vector2(246, 126)
+[node name="PlayerDiver" parent="." instance=ExtResource("1_iukft")]
+position = Vector2(179, 108)
