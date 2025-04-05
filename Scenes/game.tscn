@@ -65,11 +65,19 @@ pattern_3 = SubResource("TileMapPattern_i6g32")
 [node name="Game" type="Node2D"]
 
 [node name="PlayerDiver" parent="." instance=ExtResource("1_iukft")]
-position = Vector2(181, 103)
+position = Vector2(44.0001, -97)
 scale = Vector2(3, 3)
-move_speed = 400.0
+move_speed = 300.0
+
+[node name="Camera2D2" type="Camera2D" parent="PlayerDiver"]
+visible = false
+position = Vector2(-5, -14.6667)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+rotation_smoothing_speed = 10.0
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-36, -272)
 tile_set = SubResource("TileSet_v158k")
 rendering_quadrant_size = 32
 format = 2
