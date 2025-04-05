@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://vxmr5fn2ux1o"]
+[gd_scene load_steps=7 format=3 uid="uid://vxmr5fn2ux1o"]
 
 [ext_resource type="PackedScene" uid="uid://cs4ar6wdoe1w0" path="res://Scenes/Character/player_diver.tscn" id="1_iukft"]
 [ext_resource type="Texture2D" uid="uid://c8ldmgmenj5bg" path="res://Assets/temp tiles/tilemap-backgrounds_packed.png" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://b660kxa2fprev" path="res://Scenes/fishspawn.tscn" id="3_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://cn7tcmuwscn6x" path="res://Scenes/fish.tscn" id="4_3dryh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wrm1d"]
 texture = ExtResource("2_qxrlw")
@@ -65,3 +67,6 @@ position = Vector2(181, 103)
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_3dryh")
 format = 2
+
+[node name="Fishspawn" parent="." instance=ExtResource("3_wrm1d")]
+fish_scene = ExtResource("4_3dryh")

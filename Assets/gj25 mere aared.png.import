@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bafwegtxcffp3"
-path="res://.godot/imported/GJ25 character.png-97ec8ac3ee49ed0c454851f88d610642.ctex"
+uid="uid://de2cfeabkshk2"
+path="res://.godot/imported/gj25 mere aared.png-ef5258a759658150e7744d3a8c4cf338.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GJ25 character.png"
-dest_files=["res://.godot/imported/GJ25 character.png-97ec8ac3ee49ed0c454851f88d610642.ctex"]
+source_file="res://Assets/gj25 mere aared.png"
+dest_files=["res://.godot/imported/gj25 mere aared.png-ef5258a759658150e7744d3a8c4cf338.ctex"]
 
 [params]
 
