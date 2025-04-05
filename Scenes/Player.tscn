@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://djprfrc2m4reo"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qbkls"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rpqav"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(22.425, 22.425)
+texture = SubResource("CanvasTexture_qbkls")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rpqav")
+debug_color = Color(0.188076, 0.586628, 0.716781, 0.42)
