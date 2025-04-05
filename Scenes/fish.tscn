@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://db17vfwqvx4r8"]
+
+[ext_resource type="Script" path="res://Scripts/fish_movement.gd" id="1_c4ibo"]
+[ext_resource type="Texture2D" uid="uid://dfsiyer6yfjth" path="res://Assets/fish.png" id="1_twvwo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4ibo"]
+size = Vector2(88, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twvwo"]
+size = Vector2(286, 73)
+
+[node name="Fish" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_c4ibo")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.277778, 0.306944)
+texture = ExtResource("1_twvwo")
+
+[node name="CatchArea" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(2, -0.5)
+shape = SubResource("RectangleShape2D_c4ibo")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="MovementArea" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(-4, -1.5)
+shape = SubResource("RectangleShape2D_twvwo")

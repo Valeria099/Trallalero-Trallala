@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bafwegtxcffp3"
-path="res://.godot/imported/GJ25 character.png-97ec8ac3ee49ed0c454851f88d610642.ctex"
+uid="uid://c8ldmgmenj5bg"
+path="res://.godot/imported/tilemap-backgrounds_packed.png-fb744f3308a592b8207457e914349a97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GJ25 character.png"
-dest_files=["res://.godot/imported/GJ25 character.png-97ec8ac3ee49ed0c454851f88d610642.ctex"]
+source_file="res://Assets/temp tiles/tilemap-backgrounds_packed.png"
+dest_files=["res://.godot/imported/tilemap-backgrounds_packed.png-fb744f3308a592b8207457e914349a97.ctex"]
 
 [params]
 

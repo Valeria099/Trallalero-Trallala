@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bafwegtxcffp3"
-path="res://.godot/imported/GJ25 character.png-97ec8ac3ee49ed0c454851f88d610642.ctex"
+uid="uid://f5hvcd3whybt"
+path="res://.godot/imported/veelaine.png-ccb24c9c7c4d9196f23cb87c2756ad65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GJ25 character.png"
-dest_files=["res://.godot/imported/GJ25 character.png-97ec8ac3ee49ed0c454851f88d610642.ctex"]
+source_file="res://Assets/veelaine.png"
+dest_files=["res://.godot/imported/veelaine.png-ccb24c9c7c4d9196f23cb87c2756ad65.ctex"]
 
 [params]
 

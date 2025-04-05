@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cj3m40puqal1r"]
+
+[ext_resource type="Texture2D" uid="uid://d2e5mfp15vtml" path="res://Assets/temp tiles/download.jpg" id="1_82nft"]
+[ext_resource type="PackedScene" uid="uid://b660kxa2fprev" path="res://Scenes/fishspawn.tscn" id="1_s8juy"]
+[ext_resource type="Script" uid="uid://bo3dkl3icdnk" path="res://Scripts/playerCharacter.gd" id="2_s8juy"]
+[ext_resource type="PackedScene" uid="uid://cn7tcmuwscn6x" path="res://Scenes/fish.tscn" id="3_s8juy"]
+
+[node name="GAME" type="Node2D"]
+position = Vector2(0, -6)
+
+[node name="Fishspawn" parent="." instance=ExtResource("1_s8juy")]
+fish_scene = ExtResource("3_s8juy")
+
+[node name="Hook" type="Sprite2D" parent="."]
+position = Vector2(542.75, 35.25)
+scale = Vector2(0.26, 0.264444)
+texture = ExtResource("1_82nft")
+script = ExtResource("2_s8juy")
