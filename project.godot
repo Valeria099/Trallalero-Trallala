@@ -11,5 +11,13 @@ config_version=5
 [application]
 
 config/name="Trallelero-Trallala"
+run/main_scene="uid://dv4dc6v8dlay7"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=900
+window/stretch/mode="viewport"
+window/handheld/orientation=1

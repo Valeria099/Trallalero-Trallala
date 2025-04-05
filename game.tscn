@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv4dc6v8dlay7"]
+
+[ext_resource type="Texture2D" uid="uid://b3a2bkwrobaof" path="res://download.jpg" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://bo3dkl3icdnk" path="res://hook.gd" id="2_feb5d"]
+
+[node name="GAME" type="Node2D"]
+position = Vector2(0, -6)
+
+[node name="Hook" type="Sprite2D" parent="."]
+position = Vector2(542.75, 35.25)
+scale = Vector2(0.26, 0.264444)
+texture = ExtResource("1_e2o6t")
+script = ExtResource("2_feb5d")
