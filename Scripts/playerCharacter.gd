@@ -2,9 +2,6 @@ extends CharacterBody2D
 
 @export var move_speed : float = 100
 
-# Define horizontal movement boundaries
-const LEFT_LIMIT = 427
-const RIGHT_LIMIT = 853
 
 func _process(_delta):
 	var direction = Vector2(
