@@ -1,14 +1,8 @@
-<<<<<<< HEAD
-[gd_scene load_steps=3 format=3 uid="uid://dixbwyieskpsm"]
-
-[ext_resource type="Texture2D" path="res://Assets/download.jpg" id="1_82nft"]
-[ext_resource type="Script" path="res://Scripts/hook.gd" id="2_s8juy"]
-=======
-[gd_scene load_steps=3 format=3 uid="uid://dv4dc6v8dlay7"]
+[gd_scene load_steps=4 format=3 uid="uid://cj3m40puqal1r"]
 
 [ext_resource type="Texture2D" uid="uid://d2e5mfp15vtml" path="res://Assets/download.jpg" id="1_82nft"]
 [ext_resource type="Script" uid="uid://bo3dkl3icdnk" path="res://Scripts/hook.gd" id="2_s8juy"]
->>>>>>> main
+[ext_resource type="PackedScene" uid="uid://cn7tcmuwscn6x" path="res://Scenes/fish.tscn" id="3_s8juy"]
 
 [node name="GAME" type="Node2D"]
 position = Vector2(0, -6)
@@ -18,3 +12,15 @@ position = Vector2(542.75, 35.25)
 scale = Vector2(0.26, 0.264444)
 texture = ExtResource("1_82nft")
 script = ExtResource("2_s8juy")
+
+[node name="Fish" parent="." instance=ExtResource("3_s8juy")]
+position = Vector2(445, 368)
+
+[node name="Fish2" parent="." instance=ExtResource("3_s8juy")]
+position = Vector2(862, 235)
+
+[node name="Fish3" parent="." instance=ExtResource("3_s8juy")]
+position = Vector2(354, 190)
+
+[node name="Fish4" parent="." instance=ExtResource("3_s8juy")]
+position = Vector2(763, 549)
