@@ -7,6 +7,7 @@
 radius = 9.05539
 
 [node name="PlayerDiver" type="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_lqohb")
 
 [node name="Mjes" type="Sprite2D" parent="."]
@@ -29,5 +30,3 @@ texture = ExtResource("1_oh0bc")
 hframes = 3
 vframes = 3
 frame = 2
-
-[node name="Camera2D" type="Camera2D" parent="."]
