@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cs4ar6wdoe1w0" path="res://Scenes/Character/player_diver.tscn" id="1_iukft"]
 [ext_resource type="Texture2D" uid="uid://f5hvcd3whybt" path="res://Assets/veelaine.png" id="2_qxrlw"]
-[ext_resource type="PackedScene" path="res://Scenes/fishspawn.tscn" id="3_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://b660kxa2fprev" path="res://Scenes/fishspawn.tscn" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://db17vfwqvx4r8" path="res://Scenes/fish.tscn" id="4_3dryh"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_wrm1d"]
