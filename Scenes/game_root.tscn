@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 [gd_scene format=3 uid="uid://bv8dki8byte06"]
+=======
+[gd_scene format=3 uid="uid://bo5o0mroh1kq8"]
+>>>>>>> main
 
 [node name="GameRoot" type="Node2D"]
