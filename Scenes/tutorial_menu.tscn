@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://8b0jc5vg41ai"]
+
+[ext_resource type="Script" uid="uid://bfs3ouvs1cuvb" path="res://Scripts/tutorial_menu.gd" id="1_4vcbs"]
+
+[node name="tutorial_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4vcbs")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.301961, 0.329412, 0.494118, 1)
+
+[node name="TitleText" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 16.0
+offset_right = 636.0
+offset_bottom = 198.0
+theme_override_font_sizes/normal_font_size = 100
+text = "Tutorial"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 223.0
+offset_right = 424.0
+offset_bottom = 853.0
+
+[node name="ControlsText" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "W, A, S, D - Movement
+Arrow keys - Movement
+Mouse - Point
+Left Click - Catch fish
+Space - Reel up
+"
+fit_content = true
+
+[node name="MenuButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 63.0
+offset_top = 798.0
+offset_right = 252.0
+offset_bottom = 853.0
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 30
+text = "Menu"
+
+[connection signal="pressed" from="MenuButton" to="." method="menubutton"]

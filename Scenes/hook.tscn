@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dv4dc6v8dlay7"]
 
 [ext_resource type="Texture2D" uid="uid://d2e5mfp15vtml" path="res://Assets/download.jpg" id="1_82nft"]
-[ext_resource type="Script" path="res://Scripts/hook.gd" id="2_s8juy"]
+[ext_resource type="Script" uid="uid://bo3dkl3icdnk" path="res://Scripts/hook.gd" id="2_s8juy"]
 
 [node name="GAME" type="Node2D"]
 position = Vector2(0, -6)
