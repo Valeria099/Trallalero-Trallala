@@ -8,8 +8,8 @@ var current_oxygen := 100.0
 @export var oxygen_replenish_rate := 15.0
 
 @export var jump_force = 600
-@export var move_speed : float = 450
-@export var swim_speed = 400
+@export var move_speed : float = 350
+@export var swim_speed = 300
 @export var gravity = 400
 @export var max_fall_speed = 2000
 
@@ -26,6 +26,8 @@ func _process(delta):
 	# oxygen management
 	if is_swimming:
 		current_oxygen = max(current_oxygen - (oxygen_depletion_rate * delta), 0)
+		if current_oxygen <= 0:
+			drown()
 	else:
 		current_oxygen = min(current_oxygen + (oxygen_replenish_rate * delta), max_oxygen)
 		
@@ -62,9 +64,10 @@ func set_swimming(swimming: bool):
 	if !swimming:
 		is_jumping = false
 
-func drown():
-	pass
-	# do so it goes back to menu after some time
+func drown(): # waits for a sec and goes game over screen
+	await get_tree().create_timer(1.0).timeout
+	
+	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 
 func refill_oxygen(amount: float):
 	current_oxygen = min(current_oxygen + amount, max_oxygen)

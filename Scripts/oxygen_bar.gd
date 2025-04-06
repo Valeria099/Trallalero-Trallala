@@ -16,12 +16,6 @@ extends CanvasLayer
 @onready var animation_player := $Control/AnimationPlayer as AnimationPlayer
 
 func _ready():
-	# trying to lock oxygen bar to top left
-	var ui_root = get_node("Control")
-	ui_root.set_anchors_preset(Control.PRESET_TOP_LEFT)
-	ui_root.offset_top = 20
-	ui_root.offset_left = 20
-	ui_root.show()
 	
 	bar_fill.max_value = 100
 	bar_fill.value = oxygen_ratio * 100

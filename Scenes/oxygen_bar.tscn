@@ -75,14 +75,16 @@ _data = {
 }
 
 [node name="OxygenBar" type="CanvasLayer"]
-follow_viewport_enabled = true
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, 0, 0)
 script = ExtResource("1_aurtf")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 142.0
+scale = Vector2(0.979402, 1.03219)
 pivot_offset = Vector2(20, 20)
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
