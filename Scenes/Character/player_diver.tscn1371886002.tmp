@@ -7,7 +7,7 @@
 radius = 9.05539
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lqohb"]
-size = Vector2(10.6682, 28.0015)
+size = Vector2(10.6682, 33.3301)
 
 [node name="PlayerDiver" type="CharacterBody2D" node_paths=PackedStringArray("spear", "spear_area")]
 scale = Vector2(1.5, 1.5)
@@ -37,11 +37,9 @@ vframes = 3
 frame = 2
 
 [node name="SpearArea" type="Area2D" parent="Spear"]
-visibility_layer = 2
-collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spear/SpearArea"]
-position = Vector2(-0.0117183, -9.33565)
+position = Vector2(-0.0117183, -1.33333)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lqohb")
 

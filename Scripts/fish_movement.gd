@@ -41,3 +41,13 @@ func pick_random_direction():
 	direction = Vector2(dir, 0)
 	$Sprite2D.flip_h = dir < 0  # flip sprite if going left
 	timer = randf_range(direction_change_interval * 0.5, direction_change_interval * 1.5)
+
+func caught_by_spear():
+	var collision_shape = get_node_or_null("CatchArea/CollisionShape2D")
+	if collision_shape:
+		collision_shape.set_deferred("disabled", true)
+	else:
+		print("Error: CollisionShape2D not found at path CatchArea/CollisionShape2D")
+	
+	visible = false
+	queue_free()
