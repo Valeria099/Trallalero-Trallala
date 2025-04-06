@@ -12,7 +12,9 @@ var current_oxygen := 100.0
 @export var swim_speed = 300
 @export var gravity = 400
 @export var max_fall_speed = 2000
+@onready var grab_zone = $GrabZone
 
+var weight = false
 var is_swimming = false
 var is_jumping = false
 
@@ -58,6 +60,24 @@ func _physics_process(delta):
 		velocity.y = clamp(velocity.y, -max_fall_speed, max_fall_speed)
 	
 	move_and_slide()
+	# Clamp position so it stays in the center third of the screen
+	#position.x = clamp(position.x, LEFT_LIMIT, RIGHT_LIMIT)
+	if Input.is_action_just_pressed("grab_fish"):
+		var areas = $GrabZone.get_overlapping_areas()
+		print("Overlapping Areas:", areas)
+		for area in areas:
+			print("Found area: ", area.name)
+
+func try_pickup():
+	for body in $GrabZone.get_overlapping_bodies():
+		if body is CharacterBody2D and body.get_parent().has_method("on_picked_up"):
+			var fish = body.get_parent()
+			if fish.can_be_picked_up():
+				fish.on_picked_up()
+				return
+
+func _on_fish_picked_up():
+	weight = true
 
 func set_swimming(swimming: bool):
 	is_swimming = swimming

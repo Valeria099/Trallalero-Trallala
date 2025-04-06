@@ -1,13 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs4ar6wdoe1w0"]
+[gd_scene load_steps=5 format=3 uid="uid://cs4ar6wdoe1w0"]
 
 [ext_resource type="Script" uid="uid://bo3dkl3icdnk" path="res://Scripts/playerCharacter.gd" id="1_lqohb"]
 [ext_resource type="Texture2D" uid="uid://bafwegtxcffp3" path="res://Assets/GJ25 character.png" id="1_oh0bc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lqohb"]
-radius = 9.05539
+radius = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h4n2n"]
+radius = 8.0
 
 [node name="PlayerDiver" type="CharacterBody2D"]
 scale = Vector2(1.5, 1.5)
+collision_layer = 5
+collision_mask = 10
 script = ExtResource("1_lqohb")
 
 [node name="Mjes" type="Sprite2D" parent="."]
@@ -30,3 +35,11 @@ texture = ExtResource("1_oh0bc")
 hframes = 3
 vframes = 3
 frame = 2
+
+[node name="GrabZone" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabZone"]
+position = Vector2(23, 0)
+shape = SubResource("CircleShape2D_h4n2n")
