@@ -7,7 +7,7 @@ extends Node2D
 var spawn_timer: Timer
 var spawn_shape: CollisionShape2D
 func _ready():
-	spawn_shape = $CollisionShape2D
+	spawn_shape = $Spawn
 	spawn_timer = $Timer
 	spawn_timer.wait_time = spawn_interval
 	spawn_timer.timeout.connect(_on_timer_timeout)

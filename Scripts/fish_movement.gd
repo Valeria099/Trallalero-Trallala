@@ -11,7 +11,7 @@ func _ready():
 	pick_random_direction()
 
 
-func _physics_process(delta):
+func _physics_process(_elta):
 	timer += 1
 	if timer >= direction_change:
 		pick_random_direction()
