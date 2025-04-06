@@ -1,15 +1,5 @@
 extends CharacterBody2D
 
-# fish catching w spear
-@export var spear: Sprite2D
-@export var spear_area: Area2D
-@export var spear_attack_distance: float = 50.0
-@export var spear_attack_speed: float = 10.0
-
-var is_attacking = false
-var spear_original_position: Vector2
-var fish_caught = 0
-
 # oxygen system
 @export var oxygen_ui: OxygenBar
 @export var max_oxygen := 100.0
@@ -28,42 +18,6 @@ var is_jumping = false
 
 func _ready():
 	current_oxygen = max_oxygen
-	
-	spear_original_position = spear.position
-	spear_area.monitoring = false #disable until attack
-	
-	print("Fish groups:", get_groups())  # Should print ["fish"]
-
-func _input(event):
-	if event.is_action_pressed("left_click") and not is_attacking:
-		attack_with_spear()
-
-func attack_with_spear():
-	is_attacking = true
-	spear_area.monitoring = true # enable collision detection
-	
-	# animate spear thrust (move forward)
-	var target_position = spear_original_position + Vector2(spear_attack_distance, 0)
-	var tween = create_tween()
-	tween.tween_property(spear, "position", target_position, 0.1)
-	tween.tween_property(spear, "position", spear_original_position, 0.3)
-	tween.tween_callback(_finish_attack)
-
-func _finish_attack():
-	is_attacking = false
-	spear_area.monitoring = false
-
-func _on_spear_area_body_entered(body):
-	print("entered")
-	# Skip if colliding with player
-	var node = body
-	while node != null:
-		if "fish" in node.get_groups():
-			print("caught fish")
-			node.caught_by_spear()
-			fish_caught += 1
-			return
-		node = node.get_parent()
 
 func _process(delta):
 	# Make the character always face the mouse cursor

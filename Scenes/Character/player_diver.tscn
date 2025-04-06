@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cs4ar6wdoe1w0"]
+[gd_scene load_steps=4 format=3 uid="uid://cs4ar6wdoe1w0"]
 
 [ext_resource type="Script" uid="uid://bo3dkl3icdnk" path="res://Scripts/playerCharacter.gd" id="1_lqohb"]
 [ext_resource type="Texture2D" uid="uid://bafwegtxcffp3" path="res://Assets/GJ25 character.png" id="1_oh0bc"]
@@ -6,14 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_lqohb"]
 radius = 9.05539
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqohb"]
-size = Vector2(10.6682, 28.0015)
-
-[node name="PlayerDiver" type="CharacterBody2D" node_paths=PackedStringArray("spear", "spear_area")]
+[node name="PlayerDiver" type="CharacterBody2D"]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_lqohb")
-spear = NodePath("Spear")
-spear_area = NodePath("Spear/SpearArea")
 
 [node name="Mjes" type="Sprite2D" parent="."]
 position = Vector2(1, -1)
@@ -35,14 +30,3 @@ texture = ExtResource("1_oh0bc")
 hframes = 3
 vframes = 3
 frame = 2
-
-[node name="SpearArea" type="Area2D" parent="Spear"]
-visibility_layer = 2
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spear/SpearArea"]
-position = Vector2(-0.0117183, -9.33565)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_lqohb")
-
-[connection signal="body_entered" from="Spear/SpearArea" to="." method="_on_spear_area_body_entered"]
