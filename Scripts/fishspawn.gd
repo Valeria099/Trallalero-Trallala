@@ -24,8 +24,17 @@ func spawn_fish():
 	#random position anywhere on the screen
 	fish.global_position = Vector2(
 		randf_range(0, screen_size.x),
-		randf_range(0, screen_size.y)
+		randf_range(0, 2000)
 		)
+		
+	var y_position = fish.global_position.y
+	print("Spawned fish at y position: ", y_position)
+	
+	var x_ratio = y_position / screen_size.x  # value between 0.0 and 1.0
+	var min_scale = 0.5
+	var max_scale = 2.0
+	var scale_factor = lerp(min_scale, max_scale, x_ratio)
+	fish.scale = Vector2(scale_factor, scale_factor)
 	
 	add_child(fish)
 	

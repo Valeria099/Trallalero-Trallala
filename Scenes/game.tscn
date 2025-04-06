@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bhtowfutlqog4" path="res://Assets/GJ25 vesi.png" id="3_wowpa"]
 [ext_resource type="PackedScene" uid="uid://db17vfwqvx4r8" path="res://Scenes/Character/fish.tscn" id="4_3dryh"]
 [ext_resource type="Texture2D" uid="uid://5swmftw56sh2" path="res://Assets/gj25 mere aared.png" id="4_i6g32"]
-[ext_resource type="Script" uid="uid://b41m6qoalioe8" path="res://Scripts/water_area.gd" id="7_1l0tm"]
+[ext_resource type="Script" path="res://Scripts/water_area.gd" id="7_1l0tm"]
 [ext_resource type="PackedScene" path="res://Scenes/oxygen_bar.tscn" id="8_v158k"]
 [ext_resource type="Script" uid="uid://d35rebw3b877g" path="res://Scripts/fishspawn.gd" id="9_h4fw4"]
 
