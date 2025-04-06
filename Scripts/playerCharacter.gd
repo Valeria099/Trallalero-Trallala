@@ -1,8 +1,15 @@
 extends CharacterBody2D
 
+# oxygen system
+@export var oxygen_ui: OxygenBar
+@export var max_oxygen := 100.0
+var current_oxygen := 100.0
+@export var oxygen_depletion_rate := 10.0
+@export var oxygen_replenish_rate := 15.0
+
 @export var jump_force = 600
-@export var move_speed : float = 450
-@export var swim_speed = 400
+@export var move_speed : float = 350
+@export var swim_speed = 300
 @export var gravity = 400
 @export var max_fall_speed = 2000
 @onready var grab_zone = $GrabZone
@@ -11,9 +18,24 @@ var weight = false
 var is_swimming = false
 var is_jumping = false
 
-func _process(_delta):
+func _ready():
+	current_oxygen = max_oxygen
+
+func _process(delta):
 	# Make the character always face the mouse cursor
 	look_at(get_global_mouse_position())
+	
+	# oxygen management
+	if is_swimming:
+		current_oxygen = max(current_oxygen - (oxygen_depletion_rate * delta), 0)
+		if current_oxygen <= 0:
+			drown()
+	else:
+		current_oxygen = min(current_oxygen + (oxygen_replenish_rate * delta), max_oxygen)
+		
+	# Update UI if reference exists
+	if oxygen_ui:
+		oxygen_ui.update_oxygen(current_oxygen / max_oxygen)
 
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
@@ -61,3 +83,11 @@ func set_swimming(swimming: bool):
 	is_swimming = swimming
 	if !swimming:
 		is_jumping = false
+
+func drown(): # waits for a sec and goes game over screen
+	await get_tree().create_timer(1.0).timeout
+	
+	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+
+func refill_oxygen(amount: float):
+	current_oxygen = min(current_oxygen + amount, max_oxygen)

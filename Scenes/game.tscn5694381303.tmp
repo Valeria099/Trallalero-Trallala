@@ -184,25 +184,7 @@ size = Vector2(2206, 2875)
 
 [node name="Game" type="Node2D"]
 
-[node name="OxygenBar" parent="." instance=ExtResource("8_v158k")]
-offset = Vector2(20, 20)
-transform = Transform2D(1, 0, 0, 1, 20, 20)
-
-[node name="PlayerDiver" parent="." node_paths=PackedStringArray("oxygen_ui") groups=["player"] instance=ExtResource("1_iukft")]
-oxygen_ui = NodePath("../OxygenBar")
-
-[node name="Camera2D2" type="Camera2D" parent="PlayerDiver"]
-zoom = Vector2(2, 2)
-limit_left = -430
-limit_top = -315
-limit_right = 365
-limit_bottom = 2645
-limit_smoothed = true
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_top_margin = 0.4
+[node name="PlayerDiver" parent="." groups=["player"] instance=ExtResource("1_iukft")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_v158k")
@@ -239,6 +221,22 @@ script = ExtResource("7_1l0tm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-42, 1458.5)
 shape = SubResource("RectangleShape2D_i6g32")
+
+[node name="OxygenBar" parent="." instance=ExtResource("8_v158k")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(1.5, 1.5)
+zoom = Vector2(2, 2)
+limit_left = -430
+limit_top = -315
+limit_right = 365
+limit_bottom = 2645
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_top_margin = 0.4
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
