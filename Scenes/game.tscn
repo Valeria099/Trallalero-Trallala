@@ -1,14 +1,16 @@
-[gd_scene load_steps=24 format=3 uid="uid://bqpbs3q3lkgy4"]
+[gd_scene load_steps=26 format=3 uid="uid://bqpbs3q3lkgy4"]
 
 [ext_resource type="PackedScene" uid="uid://cs4ar6wdoe1w0" path="res://Scenes/Character/player_diver.tscn" id="1_iukft"]
 [ext_resource type="Texture2D" uid="uid://f5hvcd3whybt" path="res://Assets/veelaine.png" id="2_qxrlw"]
 [ext_resource type="Texture2D" uid="uid://bhtowfutlqog4" path="res://Assets/GJ25 vesi.png" id="3_wowpa"]
 [ext_resource type="PackedScene" uid="uid://db17vfwqvx4r8" path="res://Scenes/Character/fish.tscn" id="4_3dryh"]
 [ext_resource type="Texture2D" uid="uid://5swmftw56sh2" path="res://Assets/gj25 mere aared.png" id="4_i6g32"]
-[ext_resource type="PackedScene" path="res://Scenes/paat.tscn" id="6_h4fw4"]
-[ext_resource type="Script" uid="uid://8fomuuph4eqe" path="res://Scripts/water_area.gd" id="7_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://516gtn08g1gd" path="res://Scenes/paat.tscn" id="6_h4fw4"]
+[ext_resource type="Script" uid="uid://b41m6qoalioe8" path="res://Scripts/water_area.gd" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://efnypfh88r8t" path="res://Scenes/oxygen_bar.tscn" id="8_v158k"]
 [ext_resource type="Script" uid="uid://d35rebw3b877g" path="res://Scripts/fishspawn.gd" id="9_h4fw4"]
+[ext_resource type="AudioStream" uid="uid://r51w4gvnpe13" path="res://helid/FISH GAME SONG FINISHED EDITION PROBABLY.ogg" id="10_o5yvi"]
+[ext_resource type="AudioStream" uid="uid://d22b4c7xnp1iq" path="res://helid/mere ambient loop.ogg" id="11_rku1e"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_wrm1d"]
 tile_data = PackedInt32Array(0, 262144, 0, 1, 393216, 0)
@@ -260,6 +262,15 @@ debug_color = Color(0.808227, 0.372302, 0.481256, 0.42)
 [node name="Timer" type="Timer" parent="SpawnArea"]
 wait_time = 2.0
 autostart = true
+
+[node name="Mainmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_o5yvi")
+autoplay = true
+
+[node name="othermusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_rku1e")
+volume_db = -30.984
+autoplay = true
 
 [connection signal="body_entered" from="Vesi" to="Vesi" method="_on_body_entered"]
 [connection signal="body_exited" from="Vesi" to="Vesi" method="_on_body_exited"]

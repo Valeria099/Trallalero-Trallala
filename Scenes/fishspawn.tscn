@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://b660kxa2fprev"]
+[gd_scene load_steps=3 format=3 uid="uid://b660kxa2fprev"]
 
 [ext_resource type="Script" uid="uid://d35rebw3b877g" path="res://Scripts/fishspawn.gd" id="1_o3jtc"]
+[ext_resource type="AudioStream" uid="uid://b5nsuub3wjruw" path="res://helid/kalaspawn.mp3" id="2_i3b4g"]
 
 [node name="Fishspawn" type="Node2D"]
 script = ExtResource("1_o3jtc")
+
+[node name="Fishspawn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_i3b4g")
+autoplay = true
