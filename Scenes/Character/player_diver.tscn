@@ -42,4 +42,7 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrabZone"]
 position = Vector2(23, 0)
+rotation = -1.56714
 shape = SubResource("CircleShape2D_h4n2n")
+one_way_collision = true
+one_way_collision_margin = 65.0

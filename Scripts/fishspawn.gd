@@ -3,6 +3,7 @@ extends Node2D
 @export var fish_scene: PackedScene
 @export var fish_limit := 40
 @export var spawn_interval: float = 0.5
+@export var base_points := 10  # Optional base value if needed
 
 var spawn_timer: Timer
 var spawn_shape: CollisionShape2D
@@ -23,8 +24,8 @@ func spawn_fish():
 	
 	#random position anywhere on the screen
 	fish.global_position = Vector2(
-		randf_range(0, 2500),
-		randf_range(100, get_random_point_in_shape().y)
+		randf_range(0, 300),
+		randf_range(100, 2000)
 		)
 		
 	var y_position = fish.global_position.y
@@ -35,7 +36,7 @@ func spawn_fish():
 	var max_scale = 2.0
 	var scale_factor = lerp(min_scale, max_scale, x_ratio)
 	fish.scale = Vector2(scale_factor, scale_factor)
-	
+	var points = fish.scale * 5
 	add_child(fish)
 	
 func _on_timer_timeout():

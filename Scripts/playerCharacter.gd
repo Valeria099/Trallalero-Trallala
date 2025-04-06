@@ -6,7 +6,6 @@ extends CharacterBody2D
 var current_oxygen := 100.0
 @export var oxygen_depletion_rate := 10.0
 @export var oxygen_replenish_rate := 15.0
-
 @export var jump_force = 600
 @export var move_speed : float = 350
 @export var swim_speed = 300
@@ -14,13 +13,23 @@ var current_oxygen := 100.0
 @export var max_fall_speed = 2000
 @onready var grab_zone = $GrabZone
 
+var score := 0
 var weight = false
 var is_swimming = false
 var is_jumping = false
 
 func _ready():
+	$GrabZone.area_entered.connect(_on_fish_detected)
 	current_oxygen = max_oxygen
 
+func _on_fish_detected(area: Area2D):
+	if area.is_in_group("Fish"):
+		var fish_scale = area.scale.length()  # or use .x if only scaling horizontally
+		var points = int(fish_scale * 10)  # Customize scaling-to-points formula
+		score += points
+		print("Caught a fish! +" + str(points) + " points. Total: " + str(score))
+		area.queue_free()
+		
 func _process(delta):
 	# Make the character always face the mouse cursor
 	look_at(get_global_mouse_position())
