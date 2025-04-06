@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d22b4c7xnp1iq"
+path="res://.godot/imported/mere ambient loop.ogg-6fa9b4a6f539b503d0546536893e568c.oggvorbisstr"
+
+[deps]
+
+source_file="res://helid/mere ambient loop.ogg"
+dest_files=["res://.godot/imported/mere ambient loop.ogg-6fa9b4a6f539b503d0546536893e568c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

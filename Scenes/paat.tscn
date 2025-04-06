@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://vn2fprpqqxt8"]
+
+[ext_resource type="Texture2D" uid="uid://dq7jorrwkk6ac" path="res://Assets/paat.png" id="1_88vjc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnypx"]
+size = Vector2(238, 38)
+
+[node name="Paat" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_88vjc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 65)
+shape = SubResource("RectangleShape2D_wnypx")
+debug_color = Color(0.591737, 0.452899, 0.802003, 0.42)

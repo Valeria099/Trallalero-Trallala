@@ -237,7 +237,7 @@ debug_color = Color(0.691822, 0.439815, 0.617756, 0.42)
 [node name="SpawnArea" type="Area2D" parent="."]
 script = ExtResource("7_cwbqc")
 
-[node name="CollisionShape2D1" type="CollisionShape2D" parent="SpawnArea"]
+[node name="Spawn" type="CollisionShape2D" parent="SpawnArea"]
 position = Vector2(32, 1509)
 rotation = -3.14159
 scale = Vector2(0.190306, -0.454438)
