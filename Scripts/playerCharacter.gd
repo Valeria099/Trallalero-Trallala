@@ -6,7 +6,6 @@ extends CharacterBody2D
 @export var gravity = 400
 @export var max_fall_speed = 2000
 @onready var grab_zone = $GrabZone
-@onready var hand = $Hand
 
 var weight = false
 var is_swimming = false
